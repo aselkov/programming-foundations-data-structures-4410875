@@ -3,14 +3,37 @@ Problem Statement: Compute the average number of pets each student
 has in a given class. 
 '''
 
-student_pet_count_list = [0, 1, 0, 2, 1, 1, 4, 0, 0, 0, 3, 2, 1, 3, 0, 2, 2, 4]
+student_books_list = [5, 3, 0, 7, 2, 4, 6, 8, 1, 3, 9, 5, 2, 6, 7, 4]
 
-NUM_OF_STUDENTS = len(student_pet_count_list)
-print(NUM_OF_STUDENTS)
-SUM = 0
-for INDIVIDUAL_PET_COUNT in student_pet_count_list:
-    SUM = SUM + INDIVIDUAL_PET_COUNT
-print(SUM)
+# First student read 3 more books
+# Second student read 1 more book
+# Last student read 2 more books
 
-AVERAGE = SUM / NUM_OF_STUDENTS
-print(AVERAGE)
+student_books_list[0] = student_books_list[0] + 3
+student_books_list[1] += 1
+student_books_list[-1] += 2
+
+student_books_list.append(3)
+student_books_list.append(5)
+
+num_of_students = len(student_books_list)
+print(f"There are {num_of_students} students in the class")
+
+# sum / num of students
+
+item_at_index_3 = student_books_list[3]
+
+# Index Error: list index out of range
+# print(student_books_list[20])
+
+item_three_from_back = student_books_list[-3]
+print(item_three_from_back)
+
+# total_books = 0
+# for individual_books in student_books_list:
+#   total_books += individual_books
+# print(total_books)
+total_books = sum(student_books_list)
+
+average_books = total_books / num_of_students
+print(f"The average number of read books per student is {average_books:.2f}")
